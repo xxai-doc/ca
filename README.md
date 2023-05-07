@@ -7,3 +7,4 @@ El codi frontal del lloc web és de codi obert, benvingut per ajudar a optimitza
 * [codi frontal](https://github.com/xxai-art/web)
 * [Paquets d'idiomes per al lloc en conjunt](https://github.com/xxai-art/web/tree/main/i18n)
 * [Paquets d'idioma per als mòduls d'inici de sessió](https://github.com/wacpkg/user/tree/main/ui.i18n)
+* [Web Documentació multilingüe](https://github.com/xxai-doc)
