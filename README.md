@@ -1,10 +1,10 @@
 <p align="center"><a href="https://xxai.art"><img src="https://cdn.jsdelivr.net/gh/xxai-art/doc/logo.svg"/></a><br/><a href="https://xxai.art"><img src="https://cdn.jsdelivr.net/gh/xxai-art/doc/xxai.svg"/></a></p><p align="center"><a href="https://github.com/xxai-art/doc#readme"><img alt="I18N" src="https://cdn.jsdelivr.net/gh/wactax/img/t.svg"/></a>　<a href="https://groups.google.com/u/0/g/xxai-art"><img alt="Google Groups" src="https://cdn.jsdelivr.net/gh/wactax/img/g-groups.svg"/></a></p>
 
-# xxAI.art
+Es recomana instal·lar primer nodejs, [direnv](https://direnv.net) , [bun](https://github.com/oven-sh/bun) , i després `direnv allow` després d'entrar al directori ( [el .envrc](https://github.com/xxai-art/doc/blob/main/.envrc) s'executarà automàticament després d'entrar al directori).
 
-Part del codi del lloc web és de codi obert, benvingut per ajudar a optimitzar la traducció.
+El significat és: traducció del xinès al japonès, coreà, anglès, traducció a l'anglès a tots els altres idiomes. Si només voleu donar suport al xinès i l'anglès, només podeu escriure `zh: en` .
 
-## codi frontal
+El significat és: traducció del xinès al japonès, coreà, anglès, traducció a l'anglès a tots els altres idiomes. Si només voleu donar suport al xinès i l'anglès, només podeu escriure `zh: en` .
 
 * [codi frontal](https://github.com/xxai-art/web)
 * [Paquets d'idiomes per al lloc en conjunt](https://github.com/xxai-art/web/tree/main/i18n)
@@ -31,15 +31,15 @@ A partir dels 3 projectes següents
 
 ### Instruccions d'automatització de la traducció de documents
 
-Vegeu el repositori [xxai-art/doc](https://github.com/xxai-art/doc)
+Vegeu el repositori de codi [xxai-art/doc](https://github.com/xxai-art/doc)
 
-Es recomana instal·lar primer nodejs, [direnv](https://direnv.net) i [bun](https://github.com/oven-sh/bun) , i després executar `direnv allow` després d'entrar al directori.
+Es recomana instal·lar primer nodejs, [direnv](https://direnv.net) , [bun](https://github.com/oven-sh/bun) , i després `direnv allow` després d'entrar al directori ( [el .envrc](https://github.com/xxai-art/doc/blob/main/.envrc) s'executarà automàticament després d'entrar al directori).
 
-Per tal d'evitar magatzems massa grans traduïts a centenars d'idiomes, vaig crear un magatzem de codi independent per a cada idioma i vaig crear una organització per emmagatzemar aquest magatzem.
+Per evitar la gran base de codi traduïda a centenars d'idiomes, vaig crear una base de codi separada per a cada idioma i vaig crear una organització per emmagatzemar la base de codi.
 
-Si configureu la variable d'entorn `GITHUB_ACCESS_TOKEN` i, a continuació, executeu [create.github.coffee](https://github.com/xxai-art/doc/blob/main/create.github.coffee) , es crearà automàticament el magatzem.
+Si configureu la variable d'entorn `GITHUB_ACCESS_TOKEN` i, a continuació, executeu [create.github.coffee](https://github.com/xxai-art/doc/blob/main/create.github.coffee) , es crearà automàticament el dipòsit de codi.
 
-Per descomptat, també el podeu posar en un magatzem.
+Per descomptat, també podeu posar-lo en una base de codi.
 
 Referència de l'script de traducció [run.sh](https://github.com/xxai-art/doc/blob/main/run.sh)
 
@@ -71,4 +71,8 @@ L'API de Google s'utilitza per a la traducció gratuïta. Si no podeu accedir a 
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 ```
 
-L'script de traducció generarà una memòria cau de traducció al directori `.i18n` , comproveu-lo amb `git status` i afegiu-lo al dipòsit de codi per evitar traduccions repetides.
+L'script de traducció generarà una memòria cau traduïda al directori `.i18n` , si us plau, comproveu-lo amb `git status` i afegiu-lo al dipòsit de codi per evitar traduccions repetides.
+
+Si us plau, executeu `bunx i18n` cada vegada que modifiqueu la traducció per actualitzar la memòria cau.
+
+Si es modifiquen el text original i la traducció al mateix temps, la memòria cau es confondrà, de manera que si voleu modificar-ne, només podeu modificar-ne una i després executar `bunx i18n` per actualitzar la memòria cau.
