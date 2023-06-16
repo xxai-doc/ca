@@ -17,14 +17,14 @@ El llenguatge de programació frontal és [@w5/coffee_plus](http://npmjs.com/@w5
 
 A partir dels 3 projectes següents
 
-### [@w5/mdt](https://www.npmjs.com/package/@w5/mdt)
+* [@w5/mdt](https://www.npmjs.com/package/@w5/mdt)
 
-La plantilla de reducció, amb el sufix `.mdt` , pot fer referència a fitxers externs amb una sintaxi semblant a `<+ ./coffee_plus/import.js>` .
+  El sufix és `.mdt` , podeu utilitzar la sintaxi semblant a `<+ ./coffee_plus/import.js>` per fer referència a fitxers externs i generar una reducció amb el sufix `.md` .
 
-[@w5/trmd](https://www.npmjs.com/package/@w5/trmd)
+* [@w5/trmd](https://www.npmjs.com/package/@w5/trmd)
 
-La traducció Markdown no traduirà codis i enllaços, i guardarà a la memòria cau les frases traduïdes. Si es modifica la traducció però no es modifica el text original, executar-la de nou no sobreescriurà la modificació de la traducció.
+  La traducció Markdown no traduirà codis i enllaços, i guardarà a la memòria cau les frases traduïdes. Si es modifica la traducció però no es modifica el text original, executar-la de nou no sobreescriurà la modificació de la traducció.
 
-[@w5/i18n](https://www.npmjs.com/package/@w5/i18n)
+* [@w5/i18n](https://www.npmjs.com/package/@w5/i18n)
 
-Fitxers d'idioma per traduir llocs web generats `yaml` .
+  Fitxers d'idioma per traduir llocs web generats `yaml` .
