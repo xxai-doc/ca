@@ -28,3 +28,47 @@ A partir dels 3 projectes següents
 * [@w5/i18n](https://www.npmjs.com/package/@w5/i18n)
 
   Fitxers d'idioma per traduir llocs web generats `yaml` .
+
+### Instruccions d'automatització de la traducció de documents
+
+Vegeu el repositori [xxai-art/doc](https://github.com/xxai-art/doc)
+
+Es recomana instal·lar primer nodejs, [direnv](https://direnv.net) i [bun](https://github.com/oven-sh/bun) , i després executar `direnv allow` després d'entrar al directori.
+
+Per tal d'evitar magatzems massa grans traduïts a centenars d'idiomes, vaig crear un magatzem de codi independent per a cada idioma i vaig crear una organització per emmagatzemar aquest magatzem.
+
+Si configureu la variable d'entorn `GITHUB_ACCESS_TOKEN` i, a continuació, executeu [create.github.coffee](https://github.com/xxai-art/doc/blob/main/create.github.coffee) , es crearà automàticament el magatzem.
+
+Per descomptat, també el podeu posar en un magatzem.
+
+Referència de l'script de traducció [run.sh](https://github.com/xxai-art/doc/blob/main/run.sh)
+
+El codi de l'script s'interpreta de la següent manera:
+
+[bunx](https://bun.sh/docs/cli/bunx) és un reemplaçament de npx, que és més ràpid. Per descomptat, si no teniu bun instal·lat, podeu utilitzar `npx` .
+
+`bunx mdt zh` representa `.mdt` al directori zh com `.md` , vegeu els 2 fitxers enllaçats a continuació
+
+* [coffee_plus.mdt](https://github.com/xxai-doc/zh/blob/main/coffee_plus.mdt)
+* [coffee_plus.md](https://github.com/xxai-doc/zh/blob/main/coffee_plus.md)
+
+`bunx i18n` és el codi bàsic per a la traducció (si només teniu `nodejs` instal·lat, però `bun` i `direnv` no estan instal·lats, també podeu executar `npx i18n` per traduir).
+
+Analitzarà [i18n.yml](https://github.com/xxai-art/doc/blob/main/i18n.yml) , la configuració d' `i18n.yml` en aquest document és la següent:
+
+```
+en:
+zh: ja ko en
+```
+
+El significat és: traducció del xinès al japonès, coreà, anglès, traducció a l'anglès a tots els altres idiomes. Si només voleu donar suport al xinès i l'anglès, només podeu escriure `zh: en` .
+
+L'últim és [gen.README.coffee](https://github.com/xxai-art/doc/blob/main/gen.README.coffee) , que extreu el contingut entre el títol principal i el primer subtítol del `README.md` de cada idioma per generar una entrada `README.md` . El codi és molt senzill, podeu mirar-lo vosaltres mateixos.
+
+L'API de Google s'utilitza per a la traducció gratuïta. Si no podeu accedir a Google, configureu i configureu un servidor intermediari, com ara:
+
+```
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+```
+
+L'script de traducció generarà una memòria cau de traducció al directori `.i18n` , comproveu-lo amb `git status` i afegiu-lo al dipòsit de codi per evitar traduccions repetides.
